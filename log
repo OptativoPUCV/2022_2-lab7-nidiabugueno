@@ -9,3 +9,14 @@ heap.c:36:10: error: unused variable ‘new’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 21349b2
+Fri 14 Oct 2022 10:14:40 PM UTC: 
+ heap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:7: error: ‘capac’ undeclared (first use in this function)
+   39 |   new-capac=3;
+      |       ^~~~~
+heap.c:39:7: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+1c5e72f
