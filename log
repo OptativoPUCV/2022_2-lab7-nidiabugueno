@@ -32,3 +32,37 @@ Fri 14 Oct 2022 10:16:35 PM UTC:
  tests:  2|2
 total_score: 20/70
 24fbd6f
+Fri 14 Oct 2022 10:28:13 PM UTC: 
+ heap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:30:5: error: ‘capac’ undeclared (first use in this function)
+   30 |     capac = capac *2 +1;
+      |     ^~~~~
+heap.c:30:5: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:31:5: error: ‘heapArray’ undeclared (first use in this function)
+   31 |     heapArray = realloc (capac*heapElem);
+      |     ^~~~~~~~~
+heap.c:31:32: error: expected expression before ‘heapElem’
+   31 |     heapArray = realloc (capac*heapElem);
+      |                                ^~~~~~~~
+heap.c:31:17: error: too few arguments to function ‘realloc’
+   31 |     heapArray = realloc (capac*heapElem);
+      |                 ^~~~~~~
+In file included from test.c:2:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdlib.h:550:14: note: declared here
+  550 | extern void *realloc (void *__ptr, size_t __size)
+      |              ^~~~~~~
+In file included from test.c:4:
+heap.c:37:20: error: expected ‘;’ before ‘}’ token
+   37 |     now = (now-1)/2
+      |                    ^
+      |                    ;
+   38 |   }
+      |   ~                 
+heap.c:41:3: error: ‘size’ undeclared (first use in this function)
+   41 |   size++;
+      |   ^~~~
+Compilation failed
+9d34e1a
