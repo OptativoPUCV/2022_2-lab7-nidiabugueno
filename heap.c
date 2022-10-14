@@ -26,41 +26,7 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
-   if (pq->capac == pq->size)
-   {
-      heapElem* tmpArray = (heapElem*) calloc (pq->capac, sizeof(heapElem));
-      for (int i = 0 ; i < pq->size ; i = i + 1)
-      {
-        tmpArray[i] = pq->heapArray[i];    
-      }
-      pq->capac = (pq->capac * 2) + 1;
-      pq->heapArray = (heapElem*) calloc (pq->capac, sizeof(heapElem));
-      for (int i = 0 ; i < pq->size ; i = i + 1)
-      {
-        pq->heapArray[i] = tmpArray[i];    
-      }
-   }
 
-   int pos = pq->size;
-   pq->heapArray[pos].data = data;
-   pq->heapArray[pos].priority = priority;
-  
-   swap(pq, pos);
-   pq->size = pq->size + 1;
-   if (pq->heapArray[pos].priority > pq->heapArray[(pos-1)/2].priority)
-      {
-         aux->data = pq->heapArray[(pos-1)/2].data;
-         aux->priority = pq->heapArray[(pos-1)/2].priority;
-         pq->heapArray[(pos-1)/2] = pq->heapArray[pos]; 
-         pq->heapArray[pos].data = aux->data;
-         pq->heapArray[pos].priority = aux->priority;
-         pos = (pos-1)/2;
-      }
-      else
-      {
-        return;
-      }
-   } 
   
 
 }
