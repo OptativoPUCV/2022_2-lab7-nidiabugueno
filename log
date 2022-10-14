@@ -1,0 +1,11 @@
+Fri 14 Oct 2022 10:13:21 PM UTC: 
+ heap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:36:10: error: unused variable ‘new’ [-Werror=unused-variable]
+   36 |   Heap * new = (Heap *)malloc(sizeof(Heap));
+      |          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+21349b2
