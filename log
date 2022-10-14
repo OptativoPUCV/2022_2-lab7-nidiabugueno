@@ -20,3 +20,9 @@ heap.c:39:7: error: ‘capac’ undeclared (first use in this function)
 heap.c:39:7: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 1c5e72f
+Fri 14 Oct 2022 10:14:49 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+4504804
