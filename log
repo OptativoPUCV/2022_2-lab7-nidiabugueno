@@ -135,3 +135,25 @@ heap.c:42:3: error: ‘array’ undeclared (first use in this function)
 cc1: all warnings being treated as errors
 Compilation failed
 dd691ae
+Sun 16 Oct 2022 04:54:18 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:23:3: error: expected ‘;’ before ‘}’ token
+   23 |   }
+      |   ^
+heap.c:24:14: error: expected ‘)’ before ‘!’ token
+   24 |   if(pq->size ! =0){
+      |     ~        ^~
+      |              )
+heap.c: In function ‘heap_pop’:
+heap.c:41:3: error: ‘size’ undeclared (first use in this function)
+   41 |   size--;
+      |   ^~~~
+heap.c:41:3: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:42:3: error: ‘array’ undeclared (first use in this function)
+   42 |   array[0] = array[pq->size];
+      |   ^~~~~
+Compilation failed
+61f3283
