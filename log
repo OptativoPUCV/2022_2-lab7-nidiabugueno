@@ -180,3 +180,32 @@ heap.c:45:135: error: expected statement before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 d5d5b0f
+Sun 16 Oct 2022 05:03:12 PM UTC: 
+ heap.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:23:3: error: expected ‘;’ before ‘}’ token
+   23 |   }
+      |   ^
+heap.c: In function ‘heap_push’:
+heap.c:36:7: error: ‘priority’ redeclared as different kind of symbol
+   36 |   int priority=pq->heapArray[0].priority;
+      |       ^~~~~~~~
+heap.c:33:42: note: previous definition of ‘priority’ was here
+   33 | void heap_push(Heap* pq, void* data, int priority){
+      |                                      ~~~~^~~~~~~~
+heap.c:38:67: error: expected expression before ‘||’ token
+   38 |   while((now<=pq->size && pq->heapArray[now].priority) > priority)|| (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |                                                                   ^~
+heap.c:38:3: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+   38 |   while((now<=pq->size && pq->heapArray[now].priority) > priority)|| (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |   ^~~~~
+In file included from test.c:4:
+heap.c:38:134: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   38 |   while((now<=pq->size && pq->heapArray[now].priority) > priority)|| (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |                                                                                                                                      ^
+heap.c:38:134: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+da5cd4d

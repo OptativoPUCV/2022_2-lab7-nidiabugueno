@@ -31,18 +31,11 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
-
-  
-
-}
-
-
-void heap_pop(Heap* pq){
   pq->size--;
   pq->heapArray[0] = pq->heapArray[pq->size];
   int priority=pq->heapArray[0].priority;
   int now = 1;
-  while((now<=pq->size && pq->heapArray[now].priority) > priority) || (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+  while((now<=pq->size && pq->heapArray[now].priority) > priority)|| (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
     heapElem tmp=pq->heapArray[(now-1)/2];
     if(now+1 <= pq->size && pq-> heapArray[now].priority < pq->heapArray[now+1].priority) now++;
 
@@ -50,6 +43,14 @@ void heap_pop(Heap* pq){
     pq->heapArray[now]=tmp;
     now=now*2 +1;
   }
+
+
+  
+
+}
+
+
+void heap_pop(Heap* pq){
 
   
 
