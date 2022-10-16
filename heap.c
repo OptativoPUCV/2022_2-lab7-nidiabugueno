@@ -60,7 +60,7 @@ void heap_pop(Heap* pq){
     if(x+1 <= pq->size && pq->heapArray[aux].priority < pq->heapArray[x+1].priority) x++;
     pq->heapArray[(x-1)/2] = pq->heapArray[x];
     pq->heapArray[x] = tmp;
-    x = (x*2)+1;
+    x = x*2+1;
     
   }
 }
