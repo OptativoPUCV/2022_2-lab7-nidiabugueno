@@ -70,6 +70,6 @@ Heap* createHeap(){
   pq->heapArray = (heapElem*)calloc(pq->capac,sizeof(heapElem));
   pq->size =0; // total de elementos en el heap
   pq->capac=3; //capacidad del heap
-  return pq;
   
+  return pq;
 }
