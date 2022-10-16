@@ -43,14 +43,14 @@ void heap_pop(Heap* pq){
   pq->size--;
   pq->heapArray[0] = pq->heapArray[pq->size];
   int priority=pq->heapArray[0].priority;
-  int now = 1;
-  while((now<=pq->size && pq->heapArray[now].priority > priority)||(now+1<=pq->size && pq->heapArray[now+1].priority > priority)){
-    heapElem tmp=pq->heapArray[(now-1)/2];
-    if(now+1 <= pq->size && pq-> heapArray[now].priority < pq->heapArray[now+1].priority) now++;
+  int x = 1;
+  while((x<=pq->size && pq->heapArray[x].priority > priority)||(x+1<=pq->size && pq->heapArray[x+1].priority > priority)){
+    heapElem tmp=pq->heapArray[(x-1)/2];
+    if(x+1 <= pq->size && pq-> heapArray[x].priority < pq->heapArray[x+1].priority) x++;
 
-    pq->heapArray[(now-1)/2]=pq->heapArray[now];
-    pq->heapArray[now]=tmp;
-    now=now*2 +1;
+    pq->heapArray[(x-1)/2] = pq->heapArray[x];
+    pq->heapArray[x]=tmp;
+    x = x*2 +1;
 
   
 
