@@ -65,12 +65,10 @@ void heap_pop(Heap* pq){
 }
 
 Heap* createHeap(){
-  Heap * new = (Heap *)malloc(sizeof(Heap));
-  new->heapArray = (heapElem*)malloc(3*sizeof(heapElem));
-  new->size =0;
-  new->capac=3;
-  return new;
+  Heap * pq = (Heap *)calloc(1,sizeof(Heap));
+  pq->heapArray = (heapElem*)calloc(pq->capac,sizeof(heapElem));
+  pq->size =0; // total de elementos en el heap
+  pq->capac=3; //capacidad del heap
+  return pq;
   
-
-   return NULL;
 }
