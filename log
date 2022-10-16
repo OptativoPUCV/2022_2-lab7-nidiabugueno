@@ -157,3 +157,26 @@ heap.c:42:3: error: ‘array’ undeclared (first use in this function)
       |   ^~~~~
 Compilation failed
 61f3283
+Sun 16 Oct 2022 05:02:07 PM UTC: 
+ heap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:23:3: error: expected ‘;’ before ‘}’ token
+   23 |   }
+      |   ^
+heap.c: In function ‘heap_pop’:
+heap.c:45:68: error: expected expression before ‘||’ token
+   45 |   while((now<=pq->size && pq->heapArray[now].priority) > priority) || (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |                                                                    ^~
+heap.c:45:3: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+   45 |   while((now<=pq->size && pq->heapArray[now].priority) > priority) || (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |   ^~~~~
+In file included from test.c:4:
+heap.c:45:135: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   45 |   while((now<=pq->size && pq->heapArray[now].priority) > priority) || (now+1 <= pq > size && pq->heapArray[now+1].priority > priority)){
+      |                                                                                                                                       ^
+heap.c:45:135: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+d5d5b0f
