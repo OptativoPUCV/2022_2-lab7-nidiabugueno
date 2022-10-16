@@ -106,3 +106,32 @@ heap.c:37:3: error: ‘array’ undeclared (first use in this function)
       |   ^~~~~
 Compilation failed
 d2a5a22
+Sun 16 Oct 2022 04:53:59 PM UTC: 
+ heap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:21:9: error: assignment to ‘Heap *’ {aka ‘struct Heap *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   21 |   if(pq = NULL || pq->heapArray == NULL){
+      |         ^
+heap.c:21:6: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   21 |   if(pq = NULL || pq->heapArray == NULL){
+      |      ^~
+heap.c:23:3: error: expected ‘;’ before ‘}’ token
+   23 |   }
+      |   ^
+heap.c:24:14: error: expected ‘)’ before ‘!’ token
+   24 |   if(pq->size ! =0){
+      |     ~        ^~
+      |              )
+heap.c: In function ‘heap_pop’:
+heap.c:41:3: error: ‘size’ undeclared (first use in this function)
+   41 |   size--;
+      |   ^~~~
+heap.c:41:3: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:42:3: error: ‘array’ undeclared (first use in this function)
+   42 |   array[0] = array[pq->size];
+      |   ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dd691ae
